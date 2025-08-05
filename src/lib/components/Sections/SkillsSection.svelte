@@ -35,6 +35,5 @@
 
   i {
     font-size: 4rem;
-    color: rgb(255, 255, 255);
   }
 </style>

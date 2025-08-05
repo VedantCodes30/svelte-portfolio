@@ -15,7 +15,11 @@
   <div class="default-margin projects-container mt-m">
     <article class="main-project mb-m">
       <a href={`/work/${mainProject.slug}`}>
-        <img src={mainProject.projectImageUrl} alt={mainProject.name} />
+        <img
+          src={mainProject.projectImageUrl}
+          alt={mainProject.name}
+          style="view-transition-name: image-project;"
+        />
       </a>
       <div class="project-info mt-s">
         <div class="title-and-company">

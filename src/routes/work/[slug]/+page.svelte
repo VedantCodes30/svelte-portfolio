@@ -38,7 +38,12 @@
             {block.textToRender}
           </svelte:element>
         {:else}
-          <img class="content-image" src={block.url} alt="" />
+          <img
+            class="content-image"
+            src={block.url}
+            alt=""
+            style="view-transition-name: image-project;"
+          />
         {/if}
       {/each}
     </div>
@@ -57,6 +62,7 @@
     max-height: 450px;
     object-fit: cover;
   }
+
   .content-image {
     width: 100%;
   }
