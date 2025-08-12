@@ -1,10 +1,10 @@
-# Portfolio Web App
+# Portfolio Web App (BETA)  still testing and improving
 
 This is a modern portfolio web application built with [SvelteKit](https://kit.svelte.dev/) and [SanityCMS](https://www.sanity.io/). It showcases projects, skills, and work experience with smooth page transitions and a clean, responsive design.
 
 ## Features
 
-- **Animated Page Transitions**: Uses View Transitions API for smooth navigation between pages.
+- **Animated Page Transitions**: Uses View Transitions API for smooth navigation between pages and lenis for smooth scrolling.
 - **Project Showcase**: Highlights main and additional projects with images and details.
 - **Skills Section**: Displays technology stack with icons.
 - **Responsive Design**: Looks great on all devices.
@@ -29,21 +29,25 @@ This is a modern portfolio web application built with [SvelteKit](https://kit.sv
 ## Getting Started
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Run the development server:**
+
    ```bash
    npm run dev
    ```
 
 3. **Build for production:**
+
    ```bash
    npm run build
    ```
 
 4. **Preview the production build:**
+
    ```bash
    npm run preview
    ```
