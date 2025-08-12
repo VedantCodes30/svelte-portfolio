@@ -17,6 +17,21 @@
 
 <style>
   .hero-section {
-    padding-top: 3.75rem;
+    padding-top: clamp(2rem, 6vw, 3.75rem);
+    text-align: left;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-section {
+      text-align: center;
+      padding-top: clamp(1.5rem, 4vw, 2rem);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      padding-top: 1rem;
+    }
   }
 </style>

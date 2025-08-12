@@ -51,43 +51,98 @@
 <style>
   img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: clamp(10px, 2vw, 20px);
     object-fit: cover;
     cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.02);
   }
 
   .more-projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
   }
 
   .more-projects-container img {
-    height: 350px;
+    height: clamp(250px, 40vw, 350px);
   }
+
   .main-project img {
-    max-height: 450px;
+    max-height: clamp(300px, 50vw, 450px);
   }
 
   .project {
-    width: 48%;
+    width: 100%;
   }
 
   .project-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
 
   .btn-to-article {
-    display: block;
-    font-size: 48px;
-    border: 1px solid black;
-    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    width: clamp(40px, 8vw, 60px);
+    height: clamp(40px, 8vw, 60px);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .btn-to-article:hover {
+    background-color: currentColor;
+    color: white;
   }
 
   .company {
-    font-size: 18px;
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
     margin-bottom: 0;
+  }
+
+  .title-and-company {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .title-and-company h3 {
+    margin-bottom: 0.25rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .more-projects-container {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .btn-to-article {
+      align-self: flex-end;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .more-projects-container {
+      gap: 1rem;
+    }
+
+    .project-info {
+      gap: 0.5rem;
+    }
   }
 </style>

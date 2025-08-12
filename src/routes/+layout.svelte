@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Header } from "$components";
   import { Footer } from "$components";
+  import { lenis } from "lenis-svelte";
   import "../app.css";
   let { children } = $props();
 
@@ -18,7 +19,8 @@
   });
 </script>
 
-<Header />
-
-{@render children()}
-<Footer />
+<main use:lenis>
+  <Header />
+  {@render children()}
+  <Footer />
+</main>

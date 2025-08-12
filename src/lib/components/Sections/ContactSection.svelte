@@ -63,7 +63,7 @@
         >
       </h3>
     {:else if isLoading}
-      <div class="spinner-contaier">
+      <div class="spinner-container">
         <div class="spinner"></div>
         <h3>Sending off the form</h3>
       </div>
@@ -100,7 +100,7 @@
     {/if}
 
     <div class="form-text">
-      <h3 class="bold mn-s">Talk to me about your project</h3>
+      <h3 class="bold mb-s">Talk to me about your project</h3>
       <p>
         Thanks for stopping by! I'm currently working on improving this page to
         give you a better way to reach out. Whether it's about a project,
@@ -113,13 +113,15 @@
 
 <style>
   section {
-    padding-bottom: 140px;
+    padding-bottom: clamp(3rem, 8vw, 8.75rem);
   }
 
   .form-container {
     display: flex;
     justify-content: space-between;
+    gap: clamp(2rem, 4vw, 3rem);
   }
+
   .form-text {
     width: 39%;
   }
@@ -129,10 +131,11 @@
     flex-direction: column;
     align-items: flex-start;
     width: 45%;
+    gap: 1rem;
   }
 
   form * {
-    font-size: 20px;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-family: inherit;
     font-weight: 500;
   }
@@ -141,29 +144,39 @@
   input {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.035);
-    border-radius: 8px;
-    padding: 12px 12px;
+    border-radius: clamp(6px, 1.5vw, 8px);
+    padding: clamp(0.75rem, 2vw, 0.75rem);
     outline: none;
     border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  textarea:focus,
+  input:focus {
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   input {
-    height: 48px;
+    height: clamp(40px, 6vw, 48px);
   }
 
   textarea {
-    height: 120px;
+    height: clamp(100px, 15vw, 120px);
+    resize: vertical;
   }
 
   textarea::placeholder,
   input::placeholder {
-    font-size: 20px;
-
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 400;
   }
 
   .spinner-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
   }
 
   .spinner {
@@ -193,5 +206,47 @@
 
   .input-error::placeholder {
     color: white;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .form-text {
+      width: 100%;
+      order: 1;
+    }
+
+    form {
+      width: 100%;
+      order: 2;
+    }
+
+    .spinner-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    section {
+      padding-bottom: 2rem;
+    }
+
+    .form-container {
+      gap: 1.5rem;
+    }
+
+    form {
+      gap: 0.75rem;
+    }
+
+    textarea,
+    input {
+      padding: 0.5rem;
+    }
   }
 </style>
